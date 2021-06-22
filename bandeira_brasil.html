@@ -1,0 +1,50 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+	function cor(x){
+		pincel.fillStyle = x;
+	}
+
+	function retangulo(x, y, a, b){
+		pincel.fillRect(x, y, a, b);
+	}
+
+	function comecar(x, y){
+		pincel.beginPath();
+		pincel.moveTo(x, y);
+	}
+
+	function linha(x, y){
+		pincel.lineTo(x, y);
+	}
+
+	function preencher(){
+		pincel.fill();
+	}
+
+	function circulo(x, y, tamanho){
+		pincel.beginPath();
+		pincel.arc(x, y, tamanho, 0, 2 * 3.14);
+		pincel.fill();
+	}
+
+
+
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+	cor('green');
+	retangulo(0, 0, 600, 400);
+
+	cor('yellow');
+	comecar(50, 200);
+	linha(300, 25);
+	linha(550, 200);
+	linha(300, 375);
+	preencher();
+
+	cor('blue');
+	circulo(300, 200, 100);
+	
+</script>
